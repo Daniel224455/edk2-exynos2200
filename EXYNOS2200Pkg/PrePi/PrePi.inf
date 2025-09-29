@@ -16,6 +16,7 @@
   VERSION_STRING                 = 1.0
 
 [Sources]
+  SamsungQuirks.c
   PrePi.h
   PrePi.c
 

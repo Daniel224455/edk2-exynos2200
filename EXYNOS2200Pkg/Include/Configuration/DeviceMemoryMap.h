@@ -60,18 +60,16 @@ static ARM_MEMORY_REGION_DESCRIPTOR_EX gDeviceMemoryDescriptorEx[] = {
 */
 
 //--------------------- Register ---------------------
-    {"Periphs",                0x00000000, 0x15000000, AddMem, MEM_RES, UNCACHEABLE,  RtCode,   DEVICE},
-    {"Pinctrl",                0x139b0000, 0x00001000, AddDev, MMAP_IO, UNCACHEABLE, MmIO,   DEVICE},
+  {"Pinctrl",            0x15850000, 0x00001000, AddDev, MMAP_IO, UNCACHEABLE, MmIO,   DEVICE},
 //--------------------- DDR --------------------- */
-    {"RAM Partition",          0x40000000, 0x10000000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK},
-    {"UEFI FD",                0x50000000, 0x00B00000, AddMem, SYS_MEM, SYS_MEM_CAP, BsCode, WRITE_BACK},
-    {"CPU Vectors",            0x50B00000, 0x00001000, AddMem, SYS_MEM, SYS_MEM_CAP, BsData, WRITE_BACK},
-    {"UEFI Stack",             0x50B01000, 0x00040000, AddMem, SYS_MEM, SYS_MEM_CAP, BsCode, WRITE_BACK},
-    {"DXE Heap",               0x50B41000, 0x07000000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK},
-    //{"RAM Partition",          0x57B41000, 0x0FDBF000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK},
-    {"Display Reserved",       0x67000000, 0x007E9000, AddMem, MEM_RES, SYS_MEM_CAP, Reserv, WRITE_THROUGH},
-   
-    /* Terminator for MMU */
-    {"Terminator", 0, 0, 0, 0, 0, 0, 0}};
+  {"CPU Vectors",        0x90000000, 0x00001000, AddMem, SYS_MEM, SYS_MEM_CAP, BsData, WRITE_BACK},
+  {"UEFI Stack",         0x90001000, 0x00040000, AddMem, SYS_MEM, SYS_MEM_CAP, BsData, WRITE_BACK},
+  //{"KASLR",              0x8FFFF000, 0x00001000, AddMem, SYS_MEM, UNCACHEABLE, Reserv, WRITE_BACK},
+  {"UEFI FD",            0x90041000, 0x00200000, AddMem, SYS_MEM, SYS_MEM_CAP, BsData, WRITE_BACK},
+  {"DXE Heap",           0x90241000, 0x03C00000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK},
+  {"Display Reserved",   0xF6200000, 0x01348000, AddMem, MEM_RES, SYS_MEM_CAP, Reserv, WRITE_THROUGH},
+ 
+  /* Terminator for MMU */
+  {"Terminator", 0, 0, 0, 0, 0, 0, 0}};
 
 #endif

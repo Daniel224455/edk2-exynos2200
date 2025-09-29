@@ -106,13 +106,13 @@
 
   # We boot all cores here!
   gArmPlatformTokenSpaceGuid.PcdCoreCount|8
-  gArmPlatformTokenSpaceGuid.PcdClusterCount|1
+  gArmPlatformTokenSpaceGuid.PcdClusterCount|3
 
   #
   # ARM General Interrupt Controller
   #
-  gArmTokenSpaceGuid.PcdGicDistributorBase|0x10c01000
-  gArmTokenSpaceGuid.PcdGicInterruptInterfaceBase|0x10c02000
+  gArmTokenSpaceGuid.PcdGicDistributorBase|0x10200000
+  gArmTokenSpaceGuid.PcdGicInterruptInterfaceBase|0x10240000
   
   gEXYNOS2200PkgTokenSpaceGuid.PcdTimerFreqOverwrite|26000000
   gArmTokenSpaceGuid.PcdArmArchTimerIntrNum|29

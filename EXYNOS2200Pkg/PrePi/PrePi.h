@@ -48,6 +48,12 @@ ArchInitialize (
   VOID
   );
 
+// Initialize Samsung specific Quirks
+VOID
+QuirkEntry (
+  VOID
+  );
+
 VOID
 EFIAPI
 ProcessLibraryConstructorList (
